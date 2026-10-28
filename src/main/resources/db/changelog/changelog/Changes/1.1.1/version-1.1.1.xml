@@ -5,4 +5,8 @@
                    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
     <include file="changes/create-department-sq.xml" relativeToChangelogFile="true"/>
     <include file="changes/create-TBL-DEPARTMENT.xml" relativeToChangelogFile="true"/>
+    <include file="changes/create-employee-sq.xml" relativeToChangelogFile="true"/>
+    <include file="changes/create-TBL-EMPLOYEE.xml" relativeToChangelogFile="true"/>
+    <include file="changes/create-purches-request-seq.xml" relativeToChangelogFile="true"/>
+    <include file="changes/create-TBL_PURCHASE_REQUEST.xml" relativeToChangelogFile="true"/>
 </databaseChangeLog>
