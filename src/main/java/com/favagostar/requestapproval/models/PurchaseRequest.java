@@ -3,6 +3,7 @@ package com.favagostar.requestapproval.models;
 import com.favagostar.requestapproval.models.Enums.RequestStatus;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -43,7 +44,8 @@ public class PurchaseRequest {
     @JoinColumn(name = "APPROVER_ID")
     @Audited(targetAuditMode = RelationTargetAuditMode.NOT_AUDITED)
     private Employee approver;
-    @Column(name = "STATUS", nullable = false)
+    @NotNull
+    @Column(name = "STATUS", nullable = false,length = 25)
     @Enumerated(EnumType.STRING)
     private RequestStatus status = RequestStatus.PENDING;
     @CreatedDate

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="+TBL| TBL_PURCHASE_REQUEST_AUD | 1.1.1 | PA" author="PEYMAN AZISH">
+        <createTable tableName="TBL_PURCHASE_REQUEST_AUD">
+            <column name="ID" type="number(19,0)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="REV" type="number(19,0)">
+                <constraints foreignKeyName="FK_REV_INFO" referencedTableName="REVINFO" referencedColumnNames="REV"/>
+            </column>
+            <column name="REVTYPE" type="number(1,0)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="title" type="varchar2(200 CHAR)" />
+            <column name="description" type="VARCHAR2(2000 CHAR)"/>
+            <column name="requester_id" type="number(19,0)" />
+            <column name="approver_id" type="number(19,0)"/>
+            <column name="status" type="varchar2(25 CHAR)"/>
+            <column name="created_at" type="timestamp(6)"/>
+            <column name="updated_at" type="timestamp(6)"/>
+
+        </createTable>
+        <addPrimaryKey tableName="tbl_purchase_request_AUD" columnNames="ID,REV" constraintName="PK_PURCHASE_REQUEST_AUD"/>
+        
+
+    </changeSet>
+</databaseChangeLog>

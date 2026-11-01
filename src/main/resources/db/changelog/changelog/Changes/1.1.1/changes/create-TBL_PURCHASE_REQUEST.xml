@@ -9,7 +9,7 @@
             <column name="id"  type="number(19,0)">
                 <constraints primaryKey="true" primaryKeyName="PK_purchase_request"/>
             </column>
-            <column name="title" type="varchar2(200)" >
+            <column name="title" type="varchar2(200 CHAR)" >
                 <constraints nullable="false"/>
             </column>
             <column name="description" type="VARCHAR2(2000 CHAR)">
@@ -21,7 +21,7 @@
             <column name="approver_id" type="number(19,0)">
                 <constraints foreignKeyName="FK_APPROVER_ID" referencedTableName="tbl_employee" referencedColumnNames="id"/>
             </column>
-            <column name="status" type="varchar(25 CHAR)">
+            <column name="status" type="varchar2(25 CHAR)">
                 <constraints nullable="false" />
             </column>
             <column name="created_at" type="timestamp(6)">

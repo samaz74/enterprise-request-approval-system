@@ -2,21 +2,21 @@ spring:
   application:
     name: request-approval-system
 
-datasource:
-  url: jdbc:oracle:thin:@//localhost:1521/FREEPDB1
-  username: REQUEST_APP
-  password: ${DB_PASSWORD}
-  driver-class-name: oracle.jdbc.OracleDriver
+  datasource:
+    url: jdbc:oracle:thin:@//localhost:1521/FREEPDB1
+    username: REQUEST_APP
+    password: ${DB_PASSWORD}
+    driver-class-name: oracle.jdbc.OracleDriver
 
-jpa:
-  hibernate:
-    ddl-auto: validate
-  show-sql: true
-  properties:
+  jpa:
     hibernate:
-      format-sql: true
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+      org.hibernate.envers.use_revision_entity_with_native_id: false
 
-
-liquibase:
-  enabled: true
-  change-log: classpath:db/changelog/db.changelog-master.yaml
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/changelog/Changes/db.changelog-master.xml

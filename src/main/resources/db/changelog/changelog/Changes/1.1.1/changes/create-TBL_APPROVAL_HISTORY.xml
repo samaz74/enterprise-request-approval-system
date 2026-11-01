@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="+TBL | TBL_APPROVAL_HISTORY | 1.1.1 | PA " author="PEYMAN AZISH">
+        <createSequence sequenceName="SQ_ApprovalHistory" startValue="1" incrementBy="1"/>
+        <createTable tableName="tbl_approval_history">
+            <column name="id" type="number(19,0)">
+                <constraints primaryKey="true" primaryKeyName="PK_approval_history"/>
+            </column>
+            <column name="purchase_request_id" type="number(19,0)">
+                <constraints nullable="false" foreignKeyName="FK_purchase_request" referencedTableName="tbl_purchase_request" referencedColumnNames="id"/>
+            </column>
+            <column name="actor_id" type="number(19,0)">
+                <constraints nullable="false" foreignKeyName="FK_actor" referencedTableName="tbl_employee" referencedColumnNames="id"/>
+            </column>
+            <column name="comment" type="varchar2(500 CHAR)"/>
+            <column name="action" type="varchar2(20 CHAR)">
+                <constraints nullable="false" />
+            </column>
+            <column name="created_at" type="timestamp(6)">
+                <constraints nullable="false"/>
+            </column>
+
+        </createTable>
+
+    </changeSet>
+</databaseChangeLog>

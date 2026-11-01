@@ -9,4 +9,7 @@
     <include file="changes/create-TBL-EMPLOYEE.xml" relativeToChangelogFile="true"/>
     <include file="changes/create-purches-request-seq.xml" relativeToChangelogFile="true"/>
     <include file="changes/create-TBL_PURCHASE_REQUEST.xml" relativeToChangelogFile="true"/>
+    <include file="changes/create_tbl-REVINFO.xml" relativeToChangelogFile="true"/>
+    <include file="changes/create-TBL_PURCHASE_REQUEST_AUD.xml" relativeToChangelogFile="true"/>
+    <include file="changes/create-TBL_APPROVAL_HISTORY.xml" relativeToChangelogFile="true"/>
 </databaseChangeLog>
